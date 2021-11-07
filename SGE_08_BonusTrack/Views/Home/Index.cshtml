@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+@model BonusTrack_UI.ViewModel.ViewModelPlants
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    
+</head>
+<body>
+    <form action="/home/Index" method="post" item>
+        <select name="name" multiple>
+            @foreach (string planta in Model.ListOfPlantsName)
+            {
+
+                <option>@planta.ToString()</option>
+
+            }
+        </select>
+        <input type="submit" value="show details">
+        <p>@Model.DetailsOfAPlant</p>
+    </form>
+</body>
+</html>
