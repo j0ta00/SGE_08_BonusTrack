@@ -6,8 +6,11 @@ namespace BonusTrack_DAL
 {
     public class DALPlant
     {
+        #region atributes
         private List<clsPlant> listOfPlants = new List<clsPlant>();
+        #endregion
 
+        #region constructors
         public DALPlant(){
             listOfPlants.Add(new clsPlant("Aloe vera", "De la familia de las Asphodelaceae, pertenece al género Aloe, que cuenta con más de 350 especies vegetales. Esta especie, muy habitual entre las plantas de interior, tiene infinidad de aplicaciones en diversos remedios naturales, especialmente para los de la piel. Entre ellas, la de aliviar las quemaduras, rozaduras e, incluso, psoriasis y picaduras de insectos."));
             listOfPlants.Add(new clsPlant("Valeriana", "La valeriana o Valeriana officinalis es una de las plantas medicinales más empleadas en la fitoterapia. Y es normal, ya que tiene infinidad de beneficios pero quizás el más conocido sea el ayudar a relajarnos. La valeriana es una planta que disminuye la ansiedad y ayuda a dormir."));
@@ -16,7 +19,9 @@ namespace BonusTrack_DAL
             listOfPlants.Add(new clsPlant("Salvia", "La salvia o Salvia officinalis es una de las plantas más conocidas por utilizarse en cosméticos, pero también tiene otras funciones. Entre las más conocidas está su utilización para aliviar los síntomas de la menopausia."));
             listOfPlants.Add(new clsPlant("Arándanos", "Los arándanos o también llamado como cranberry (o Vaccinium macrocarpon) junto con las frambuesas son algunos de los ingredientes principales de los boles que más verás en un desayuno saludable. Pues bien, los arándanos, muy populares en la fitoterapia, a pesar de ser muy pequeños, cuentan con muchas propiedades, entre las que destaca su capacidad antibacteriana, ya que ayuda a combatir infecciones."));
         }
+        #endregion
 
+        #region aditional methods
         /// <summary>
         /// Method that simulate a connection with a database, wich you get information, and gives who call it, a list with all plants names (a list of strings)
         /// </summary>
@@ -38,5 +43,6 @@ namespace BonusTrack_DAL
         {
             return name == "" ? "":(listOfPlants.Find(plant => plant.Name.Equals(name)).Details);
         }
+        #endregion
     }
 }
