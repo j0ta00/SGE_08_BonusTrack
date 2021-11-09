@@ -14,9 +14,10 @@ namespace BonusTrack_UI.ViewModel
         #endregion
 
         #region constructors
-        public ViewModelPlants(string name){
+        public ViewModelPlants(){
             listOfPlantsName = new DALPlant().getListOfPlantsName();
-            detailsOfAPlant = new DALPlant().getDetailsPlantSelected(name);
+            detailsOfAPlant = "";
+            
         }
         #endregion
 
@@ -24,5 +25,7 @@ namespace BonusTrack_UI.ViewModel
         public List<string> ListOfPlantsName { get => listOfPlantsName; set => listOfPlantsName = value; }
         public string DetailsOfAPlant { get => detailsOfAPlant; set => detailsOfAPlant = value; }
         #endregion
+
+
     }
 }

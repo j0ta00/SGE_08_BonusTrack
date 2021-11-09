@@ -15,6 +15,12 @@ namespace BonusTrack_Entities
             this.name = nombre;
             this.details = detalles;
         }
+
+        public clsPlant()
+        {
+            this.name = "";
+            this.details = "";
+        }
         #endregion
 
         #region getters & setters

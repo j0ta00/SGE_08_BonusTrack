@@ -6,6 +6,7 @@ namespace BonusTrack_DAL
 {
     public class DALPlant
     {
+        //My way to simulate a database is use a list with plants
         #region atributes
         private List<clsPlant> listOfPlants = new List<clsPlant>();
         #endregion
@@ -25,7 +26,7 @@ namespace BonusTrack_DAL
         /// <summary>
         /// Method that simulate a connection with a database, wich you get information, and gives who call it, a list with all plants names (a list of strings)
         /// </summary>
-        /// <returns> List<string> listOfPlantsName </returns>
+        /// <returns> List (string) listOfPlantsName </returns>
         public List<string> getListOfPlantsName(){
             List<string> listOfPlantsName = new List<string>();
             foreach (clsPlant plant in listOfPlants){
@@ -41,7 +42,25 @@ namespace BonusTrack_DAL
         /// <returns> string DetallesDePlantSeleccionada </returns>
         public string getDetailsPlantSelected(string name)
         {
-            return name == "" ? "":(listOfPlants.Find(plant => plant.Name.Equals(name)).Details);
+            string detallesPlantaSeleccionada;
+            bool encontrado = false;
+            return name == "" ? "":listOfPlants.Find(plant => plant.Name.Equals(name)).Details;
+            //Equivalente a la línea de arriba
+            /*
+            if (name == "")
+            {
+                detallesPlantaSeleccionada = "";
+            }
+            else {
+                for(int i=0;i<listOfPlants.Count && !encontrado;i++){
+                    if (listOfPlants[i].Name == name) {
+                        encontrado = true;
+                        detallesPlantaSeleccionada = listOfPlants[i].Details;
+                    }                    
+                }
+            }
+            return detallesPlantaSeleccionada;
+            */
         }
         #endregion
     }

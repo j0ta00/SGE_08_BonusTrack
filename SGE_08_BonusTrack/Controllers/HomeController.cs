@@ -1,4 +1,5 @@
-﻿using BonusTrack_UI.ViewModel;
+﻿using BonusTrack_DAL;
+using BonusTrack_UI.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,13 +12,14 @@ namespace BonusTrack_UI.Controllers
     {
         public IActionResult Index()
         {
-            ViewModelPlants viewModel = new ViewModelPlants("");
+            ViewModelPlants viewModel = new ViewModelPlants();
             return View(viewModel);
         }
         [HttpPost]
-        public IActionResult Index(string name)
+        public IActionResult Index(string selectPlants)
         {
-            ViewModelPlants viewModel = new ViewModelPlants(name);
+            ViewModelPlants viewModel = new ViewModelPlants();
+            viewModel.DetailsOfAPlant = new DALPlant().getDetailsPlantSelected(selectPlants);
             return View(viewModel);
         }
     }

@@ -13,16 +13,14 @@
 </head>
 <body>
     <form action="/home/Index" method="post" item>
-        <select name="name" multiple>
-            @foreach (string planta in Model.ListOfPlantsName)
+        <select name="selectPlants" multiple>
+            @foreach (string plantName in Model.ListOfPlantsName)
             {
-
-                <option>@planta.ToString()</option>
-
+                <option value=@plantName>@plantName</option>
             }
         </select>
         <input type="submit" value="show details">
-        <p>@Model.DetailsOfAPlant</p>
     </form>
+    <p>@Model.DetailsOfAPlant</p>
 </body>
 </html>
