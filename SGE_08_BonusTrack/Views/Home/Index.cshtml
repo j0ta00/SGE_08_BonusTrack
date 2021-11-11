@@ -16,7 +16,7 @@
         <select name="selectPlants" multiple>
             @foreach (string plantName in Model.ListOfPlantsName)
             {
-                <option value=@plantName>@plantName</option>
+                <option value="@plantName">@plantName</option>
             }
         </select>
         <input type="submit" value="show details">
